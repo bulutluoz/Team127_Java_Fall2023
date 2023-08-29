@@ -17,5 +17,15 @@ public class C04_Swap {
         int sayi2 = scanner.nextInt();
 
         System.out.println("Girdiginiz degerler : sayi1 = " + sayi1 +", sayi2= "+ sayi2);
+
+        int bosKova = 0;
+
+        bosKova = sayi2;
+
+        sayi2 = sayi1;
+
+        sayi1 = bosKova;
+
+        System.out.println("Degistirilen degerler : sayi1 = " + sayi1 +", sayi2= "+ sayi2);
     }
 }
