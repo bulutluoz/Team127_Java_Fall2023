@@ -11,6 +11,10 @@ public class C07_AsciiTable {
 
         System.out.println(chr1 + chr2); // 97 + 98 = 195
 
+        char chr3 = '1';
+        char chr4 = '2';
+        System.out.println(chr3 + chr4); // 49 + 50 = 99
+
         int sayi1 = chr1 ;
 
         /*
