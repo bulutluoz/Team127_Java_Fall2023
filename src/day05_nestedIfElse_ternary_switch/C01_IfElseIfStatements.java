@@ -26,7 +26,6 @@ public class C01_IfElseIfStatements {
             System.out.println("Kadin emekli olabilir");
         }else {
             System.out.println("Kadin emekli olmak icin daha " + (60-yas) + " yil calismalidir.");
-
         }
     }
 }
