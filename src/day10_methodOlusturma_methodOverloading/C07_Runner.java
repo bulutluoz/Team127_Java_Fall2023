@@ -1,6 +1,6 @@
 package day10_methodOlusturma_methodOverloading;
 
-public class C08_Runner {
+public class C07_Runner {
 
     public static void main(String[] args) {
 
