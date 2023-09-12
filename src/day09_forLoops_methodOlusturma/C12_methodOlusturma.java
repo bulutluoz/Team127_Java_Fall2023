@@ -25,5 +25,6 @@ public class C12_methodOlusturma {
         // Google === google  bug
 
 
+
     }
 }
