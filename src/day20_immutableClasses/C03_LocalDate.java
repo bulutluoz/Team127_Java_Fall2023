@@ -37,6 +37,9 @@ public class C03_LocalDate {
 
         System.out.println(localDate.getDayOfYear()); // 276
 
+        System.out.println(localDate.getDayOfWeek()); // TUESDAY
+        System.out.println(dogumTarihi1.getDayOfWeek()); // FRIDAY
+
 
     }
 }
