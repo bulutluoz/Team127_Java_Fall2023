@@ -21,6 +21,16 @@ public class C06_DateTimeFormatter {
         System.out.println(ldt.format(istenenFormat)); // 03 Oct 2023  Tue
 
 
+        // saati 09:55 AM seklinde yazdiralim
+
+        DateTimeFormatter istenenSaatFormati1 = DateTimeFormatter.ofPattern("hh:mm a");
+
+        System.out.println(ldt.format(istenenSaatFormati1)); // 09:58 AM
+
+        // saati 9:55  24 saate gore
+
+        DateTimeFormatter istenenSaatFormati2 = DateTimeFormatter.ofPattern("H:mm");
+        System.out.println(ldt.format(istenenSaatFormati2)); // 10:00
 
          /*
 		 format olustururken
@@ -33,7 +43,7 @@ public class C06_DateTimeFormatter {
 
 		 AY (Ay icin M, dakika icin m kullanilir)
 		 M : basta 0 varsa onu yazmadan ay numarasi
-		 MM:dd: tek haneli aylari 01 gibi basina sifir yazarak ay numarasi
+		 MM: tek haneli aylari 01 gibi basina sifir yazarak ay numarasi
 		 MMM : Ay isminin ilk 3 harfi
 		 MMMM : Ay isminin tamami
 
