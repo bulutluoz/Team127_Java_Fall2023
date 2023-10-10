@@ -11,10 +11,12 @@ public class G_GrandParent {
     }
 
     G_GrandParent(int sayi){
+        this("b");
         System.out.println("GP int ");
     }
 
     G_GrandParent(boolean bl){
+        this(5);
         System.out.println("GP boolean ");
     }
 }
