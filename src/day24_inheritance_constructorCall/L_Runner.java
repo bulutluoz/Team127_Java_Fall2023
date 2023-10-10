@@ -7,5 +7,10 @@ public class L_Runner {
         K_Child child = new K_Child();
 
         System.out.println(child.sayi); // 25
+        System.out.println(child.yas); // 20
+
+        child.method1();// Child method1
+        child.method2(); // Parent method2
+
     }
 }
