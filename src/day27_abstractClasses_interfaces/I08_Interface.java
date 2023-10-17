@@ -18,10 +18,12 @@ public interface I08_Interface {
 
 
 
+
     public abstract void method1();
     public void method2();
     abstract int method5();
     String method4();
+    //void yeniMethod();
 
     public static void main(String[] args) {
 
