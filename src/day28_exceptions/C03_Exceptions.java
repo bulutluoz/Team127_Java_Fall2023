@@ -30,6 +30,8 @@ public class C03_Exceptions {
              2- bir try birden fazla catch yazabiliriz
              3- Eger tum olasi exception'lari kapsayan bir exception varsa
                 tek catch ile genis kapsamli exception yazilabilir
+                bu durumda hatayi spesifik olarak bilemeyecegimiz icin
+                hata mesajini da genel vermeliyiz
 
          */
 
@@ -68,6 +70,42 @@ public class C03_Exceptions {
         }
 
          */
+
+
+        System.out.println("Lutfen iki tamsayi giriniz");
+
+        try {
+            int sayi1 = scanner.nextInt();
+            int sayi2 = scanner.nextInt();
+            System.out.println("Sayilarin bolumu : " + sayi1/sayi2);
+        } catch (Exception e) {
+            System.out.println("yanlis giris yaptiniz");
+            System.out.println(e.toString());
+        }
+
+
+        /*
+            catch() icinde yazdigimiz e
+            yakalanan exception'in kaydedildigi obje olacaktir
+
+            eger exception ile ilgili daha detayli bilgi almak istersek
+            e objesi kullanilarak
+            hatanin detayi yazdirilabilir
+
+            ornegin : e.printStackTrace(); asagidaki raporu yazdirir
+            java.util.InputMismatchException
+            at java.base/java.util.Scanner.throwFor(Scanner.java:939)
+            at java.base/java.util.Scanner.next(Scanner.java:1594)
+            at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+            at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+            at day28_exceptions.C03_Exceptions.main(C03_Exceptions.java:78)
+
+            e.getMessage() ;  bize null veya / by zero  yazdirdi
+
+            e.toString() ; bize java.lang.ArithmeticException: / by zero yazdirdi
+
+         */
+
 
     }
 }
