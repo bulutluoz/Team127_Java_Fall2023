@@ -72,6 +72,8 @@ public class C03_Exceptions {
          */
 
 
+
+
         System.out.println("Lutfen iki tamsayi giriniz");
 
         try {
