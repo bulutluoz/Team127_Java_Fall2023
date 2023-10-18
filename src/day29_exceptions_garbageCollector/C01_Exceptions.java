@@ -34,12 +34,11 @@ public class C01_Exceptions {
                 }else{
                     System.out.println("Hatali giris, Sayi girmelisiniz, Bitirmek icin de Q'ya basmalisiniz");
                 }
-
             }
-
         }
 
         System.out.println("Girilen "+ sayac + " adet sayinin toplami : " + toplam);
+
 
     }
 }
