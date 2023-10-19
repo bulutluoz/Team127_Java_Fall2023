@@ -92,5 +92,7 @@ public class C02_ListIterator {
 
         System.out.println(sayilar); //  []
 
+
+
     }
 }
