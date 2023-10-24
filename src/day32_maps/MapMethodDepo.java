@@ -68,4 +68,28 @@ public class MapMethodDepo {
 
         }
     }
+
+    public static void soyisimdenOgrenciBulma(Map<Integer, String> ogrenciMap, String istenenSoyisim) {
+
+        // sinif, sube, isim, soyisim bilgilerini yazdiran bir method olusturun
+
+         Collection<String> valueCollection = ogrenciMap.values();
+
+         String[] valueArr;
+        System.out.println("=======" + istenenSoyisim+" soyismindeki ogrenci listesi ======");
+
+        for (String each : valueCollection
+             ) { // each ==> "Azim-Kayisi-11-K-TM"
+
+            valueArr = each.split("-");
+
+            if (valueArr[1].equalsIgnoreCase(istenenSoyisim)){
+
+                System.out.println(valueArr[2] + " " + valueArr[3] + " " + valueArr[0] + " "+valueArr[1]);
+
+            }
+
+        }
+
+    }
 }
