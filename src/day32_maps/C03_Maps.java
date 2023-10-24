@@ -28,5 +28,12 @@ public class C03_Maps {
         System.out.println(ogrenciMap.size()); // 6
 
 
+        System.out.println(ogrenciMap.keySet());
+
+        System.out.println(ogrenciMap.values());
+
+        // verilen sube'deki ogrencilerin isim ve soyisimlerini yazdiran bir method olusturun
+
+        MapMethodDepo.subeListesiyazdir(ogrenciMap,"k");
     }
 }
