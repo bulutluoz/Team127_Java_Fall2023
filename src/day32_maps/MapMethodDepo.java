@@ -3,8 +3,31 @@ package day32_maps;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class MapMethodDepo {
+    /*
+        Map kompleks bilgiler barindirabilir
+        Ne kadar cok bilgi barindirirsa, bilgilere erismek o kadar islem gerektirebilir
+        Ama temel olarak map key ve value'dan olusur
+
+        value bir cok bilgi barindiran bir String ise
+        bilgilere ulasmak icin split() ile String'i array'e ceviririz
+
+        1- Eger sadece value'dan bilgiler istenirse
+           - ogrenciMap.values() ile value'ler bir collection'a kaydedilir
+           - sonra collection'daki String'ler for-each loop ile ele alinip
+           - split() ile array'e cevrilir
+           - ve ISTENEN SARTLARA uyan value'lardan ISTENEN BILGILER kullanilir
+
+        2- Eger key ve value birlikte istenirse
+            - ogrenciMap.keySet() ile key'ler bir Set'e kaydedilir
+            - for each loop ile key'ler elden gecirilir
+            - sadece key degil, ogrenciMap.get(each) ile value'ya ulasilir
+            - value split() ile array'e cevrilir
+            - Istenen sartlari saglayan kayitlarin, istenen bilgileri KULLANILIR
+
+     */
 
     // verilen sube'deki ogrencilerin isim ve soyisimlerini yazdiran bir method olusturun
 
@@ -89,6 +112,61 @@ public class MapMethodDepo {
 
             }
 
+        }
+
+    }
+
+    public static void numaraliSinifOgrenciListesiYazdir(Map<Integer, String> ogrenciMap, String sinifNo) {
+        // numara, isim, soyisim ve subelerini yazdiran bir method olusturun
+         Set<Integer> keySeti = ogrenciMap.keySet(); //[101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
+        String valueEach;
+        String[] valueArr;
+
+        System.out.println("======= Numarali "+ sinifNo + ". sinif listesi ========");
+
+        for (Integer each : keySeti
+             ) { // each ==> key'leri getirecek 101
+
+            valueEach = ogrenciMap.get(each); // "Azim-Kayisi-11-K-TM"
+            valueArr = valueEach.split("-");
+
+            if (valueArr[2].equals(sinifNo)){
+
+                System.out.println(each + " " + valueArr[0] + " " + valueArr[1] + " " + valueArr[3]);
+
+            }
+
+        }
+
+    }
+
+    public static void numaraAraligindakiOgrenciListesi(Map<Integer, String> ogrenciMap, int baslangicNo, int bitisNo) {
+
+        // ogrencilerin numara, isim, soyisim'lerini yazdiran bir method olusturun
+
+         Set<Integer> keySeti = ogrenciMap.keySet();
+         // [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
+
+        String valueEach;
+        String[] valueArr;
+        int sayac=0;
+
+        for (Integer each : keySeti
+             ) { // each ==> 101
+
+            if (each >= baslangicNo && each<=bitisNo){
+
+                valueEach = ogrenciMap.get(each);
+                valueArr = valueEach.split("-");
+
+                System.out.println(each + " " + valueArr[0] + " " + valueArr[1]);
+                sayac++;
+            }
+
+        }
+
+        if (sayac == 0){
+            System.out.println("Verilen aralikta ogrenci bulunmamaktadir");
         }
 
     }
