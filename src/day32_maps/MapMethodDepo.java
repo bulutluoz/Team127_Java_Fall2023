@@ -236,4 +236,42 @@ public class MapMethodDepo {
         }
         return ogrenciMap;
     }
+
+    public static Map<Integer, String> yilSonuSinifArtir(Map<Integer, String> ogrenciMap) {
+
+        Set<Integer> keySeti = ogrenciMap.keySet();
+        String[] valueArr;
+
+        for (Integer each:keySeti
+             ) {
+            valueArr = ogrenciMap.get(each).split("-");
+
+            // array'deki sinif bilgisini 1 artirmam lazim
+            switch (valueArr[2]){
+                case "9" :
+                    valueArr[2] = "10";
+                    break;
+                case "10" :
+                    valueArr[2] = "11";
+                    break;
+                case "11" :
+                    valueArr[2] = "12";
+                    break;
+                case "12" :
+                    valueArr[2] = "Mezun";
+                    break;
+                default:
+                    valueArr[2] = null ;
+            }
+            String yeniValue =  valueArr[0] + "-" +
+                    valueArr[1] + "-" +
+                    valueArr[2] + "-" +
+                    valueArr[3] + "-" +
+                    valueArr[4];
+
+            ogrenciMap.put(each,yeniValue);
+        }
+
+        return ogrenciMap;
+    }
 }
