@@ -13,5 +13,7 @@ public class C07_EntryIleSoyisimUpdate {
         Map<Integer,String> ogrenciMap = MapMethodDepo.okulMapDondur();
 
         ogrenciMap = MapMethodDepo.soyisimleriBuyukHarfYap(ogrenciMap);
+
+        System.out.println(ogrenciMap);
     }
 }

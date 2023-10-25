@@ -338,7 +338,27 @@ public class MapMethodDepo {
     public static Map<Integer, String> soyisimleriBuyukHarfYap(Map<Integer, String> ogrenciMap) {
 
 
+        Set<Map.Entry<Integer,String >> entrySeti = ogrenciMap.entrySet();
 
+        String eachValue;
+        String[] valueArr;
+
+        for (Map.Entry<Integer,String> eachEntry : entrySeti
+             ) {
+            eachValue = eachEntry.getValue();
+            valueArr = eachValue.split("-"); // [Ali, Cem, 11, C, TM]
+
+            valueArr[1] = valueArr[1].toUpperCase();
+
+            String yeniValue =  valueArr[0] + "-" +
+                    valueArr[1] + "-" +
+                    valueArr[2] + "-" +
+                    valueArr[3] + "-" +
+                    valueArr[4];
+
+            eachEntry.setValue(yeniValue);
+
+        }
 
         return ogrenciMap;
     }
