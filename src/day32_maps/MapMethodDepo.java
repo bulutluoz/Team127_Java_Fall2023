@@ -274,4 +274,30 @@ public class MapMethodDepo {
 
         return ogrenciMap;
     }
+
+    public static void sinifListesiYazdirma(Map<Integer, String> ogrenciMapi, String sinif, String sube) {
+
+        // numara, isim, soyisim
+
+         Set<Map.Entry<Integer,String>> entrySeti  = ogrenciMapi.entrySet();
+
+         // entry'leri elden gecirip
+         // sinif ve sube bilgisi istenen degere esit olanlari yazdiralim
+        String eachValue;
+        String[] valueArr;
+        System.out.println("======="+sinif+"/"+sube+" sinif listesi========");
+
+        for (Map.Entry<Integer, String> eachEntry : entrySeti ){
+            // eachEntry ==>  110=Azim-Kayisi-11-K-TM
+
+            eachValue  = eachEntry.getValue(); // Azim-Kayisi-11-K-TM
+            valueArr = eachValue.split("-"); // [Ali, Cem, 11, C, TM]
+
+            if (valueArr[2].equals(sinif) && valueArr[3].equalsIgnoreCase(sube)){
+
+                System.out.println(eachEntry.getKey() + " " + valueArr[0] +" " +valueArr[1]);
+            }
+
+        }
+    }
 }
