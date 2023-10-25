@@ -300,4 +300,38 @@ public class MapMethodDepo {
 
         }
     }
+
+    public static Map<Integer, String> isimDuzenle(Map<Integer, String> ogrenciMapi) {
+
+        // bir entrySeti olusturalim
+        Set<Map.Entry<Integer,String>> entrySeti = ogrenciMapi.entrySet();
+
+        String eachValue;
+        String[] valueArr;
+        String isim;
+
+        // herbir entry'i ele almak icin for-each kullanalim
+        for (Map.Entry<Integer,String> eachEntry : entrySeti
+             ) {
+            // herbir entry'deki value'yu alalim
+            eachValue = eachEntry.getValue();
+            // value'yu degistirebilmek icin array yapalim
+            valueArr = eachValue.split("-");
+            // array[0] de bulunan isim bilgisini istenen formata getirelim
+
+            isim = valueArr[0];
+            valueArr[0] = isim.substring(0,1).toUpperCase()+isim.substring(1).toLowerCase();
+            // map'i update edebilmek icin array'i String olarak birlestirelim
+            String yeniValue =  valueArr[0] + "-" +
+                    valueArr[1] + "-" +
+                    valueArr[2] + "-" +
+                    valueArr[3] + "-" +
+                    valueArr[4];
+
+            // setEntryValue() ile guncellenen value'yu update edelim
+            eachEntry.setValue(yeniValue);
+        }
+
+        return ogrenciMapi;
+    }
 }
