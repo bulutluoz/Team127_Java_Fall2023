@@ -334,4 +334,12 @@ public class MapMethodDepo {
 
         return ogrenciMapi;
     }
+
+    public static Map<Integer, String> soyisimleriBuyukHarfYap(Map<Integer, String> ogrenciMap) {
+
+
+
+
+        return ogrenciMap;
+    }
 }
