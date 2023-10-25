@@ -170,4 +170,32 @@ public class MapMethodDepo {
         }
 
     }
+
+    public static Map<Integer, String> numaraIleSoyisimUpdate(Map<Integer, String> ogrenciMap, int ogrenciNo, String yeniSoyisim) {
+
+        // once istenen ogrenci numarasina ait value'u alalim
+        // Ali-Cem-11-K-TM
+        String ogrenciValue = ogrenciMap.get(ogrenciNo);
+
+        // split ile datayi manipule edilebilir hale getirelim
+        // [Ali, Cem, 11, K, TM]
+        String[] ogrenciValueArr = ogrenciValue.split("-");
+
+        // array'in 1.index'indeki soyismi yeniSoyisim olarak update edelim
+        // [Ali, Celik, 11, K, TM]
+        ogrenciValueArr[1] = yeniSoyisim;
+
+        // array'deki elemanlari, yeniden value formatina sokmamiz lazim
+        // String olarak "Ali-Celik-11-K-TM" elde ederiz
+        String yeniValue =  ogrenciValueArr[0] + "-" +
+                            ogrenciValueArr[1] + "-" +
+                            ogrenciValueArr[2] + "-" +
+                            ogrenciValueArr[3] + "-" +
+                            ogrenciValueArr[4];
+
+        // elimizde key var(ogrenciNo),elimizde yeni value de var
+        ogrenciMap.put(ogrenciNo,yeniValue);
+
+        return ogrenciMap;
+    }
 }
