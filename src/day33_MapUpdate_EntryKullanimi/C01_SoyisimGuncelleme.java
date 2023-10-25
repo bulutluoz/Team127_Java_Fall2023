@@ -21,5 +21,8 @@ public class C01_SoyisimGuncelleme {
 
         System.out.println(ogrenciMap.get(105)); // Sevgi-Kanki-11-M-TM
 
+
+
+
     }
 }

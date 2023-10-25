@@ -198,4 +198,42 @@ public class MapMethodDepo {
 
         return ogrenciMap;
     }
+
+    public static Map<Integer, String> subedekiOgrencileriTasi(Map<Integer, String> ogrenciMap, String eskiSube, String yeniSube) {
+
+        // Hangi ogrenci numarasinin subesi degisecek bilmedigimden
+        // once keySeti() ile tum key'leri alalim  // [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
+        Set<Integer> keySeti = ogrenciMap.keySet();
+
+        // for-each loop ile her key'e ait value'yu ele alalim
+        // Ali-Cem-11-K-TM
+
+        String[] valueArr;
+
+        for (Integer each : keySeti
+             ) {
+            // Value'daki bilgileri kullanabilmek icin array'e cevirelim
+            // [Ali, Cem, 11, K, TM]
+            valueArr = ogrenciMap.get(each).split("-");
+
+            // array[3]'e bakip istenen eskiSube degerine esit ise
+            // yeni sube olarak update edelim  [Ali, Cem, 11, C, TM]
+            if (valueArr[3].equalsIgnoreCase(eskiSube)){
+                valueArr[3] = yeniSube;
+            }
+
+            // map'i update edebilmek icin
+            // array'i value formatina uygun String'e donusturelim
+            String yeniValue =  valueArr[0] + "-" +
+                    valueArr[1] + "-" +
+                    valueArr[2] + "-" +
+                    valueArr[3] + "-" +
+                    valueArr[4];
+
+            // key ve yeni value'yu kullanarak
+            // Map'i update edelim
+            ogrenciMap.put(each,yeniValue);
+        }
+        return ogrenciMap;
+    }
 }
