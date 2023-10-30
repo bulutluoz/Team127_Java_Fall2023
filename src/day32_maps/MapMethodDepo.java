@@ -362,4 +362,40 @@ public class MapMethodDepo {
 
         return ogrenciMap;
     }
+
+    public static Map<String, Object> rezervasyonOlustur(String firstname, String lastname, int totalprice,
+                                                         boolean depositpaid, String checkin,
+                                                         String checkout, String additionalneeds) {
+    /*
+
+         {
+            "firstname" : "Ahmet",
+            "lastname" : "Bulut",
+            "totalprice" : 500,
+            "depositpaid" : false,
+            "bookingdates" : {
+                   "checkin" : "2023-07-21",
+                   "checkout" : "2023-08-10"
+                      },
+            "additionalneeds" : "wi-fi" }
+
+         */
+
+        Map<String, Object> rezervasyonMap = new HashMap<>();
+
+        rezervasyonMap.put("firstname",firstname);
+        rezervasyonMap.put("lastname",lastname);
+        rezervasyonMap.put("totalprice",totalprice);
+        rezervasyonMap.put("depositpaid",depositpaid);
+
+
+        Map<String,String> innerMap = new HashMap<>();
+        innerMap.put("checkin",checkin);
+        innerMap.put("checkout",checkout);
+
+        rezervasyonMap.put("bookingdates",innerMap);
+        rezervasyonMap.put("additionalneeds",additionalneeds);
+
+        return rezervasyonMap;
+    }
 }
