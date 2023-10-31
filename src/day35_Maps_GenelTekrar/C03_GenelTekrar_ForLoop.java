@@ -1,6 +1,7 @@
 package day35_Maps_GenelTekrar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -39,7 +40,80 @@ public class C03_GenelTekrar_ForLoop {
         List<String> babaSessizler = new ArrayList<>();
         List<String> cocukSessizler = new ArrayList<>();
         String[] sesliHarfler ={"a","e","i","ı","o","ö","u","ü"};
+        List<String> sesliHarflerList = Arrays.asList(sesliHarfler);
 
 
+        for (String each:anneHarfler
+             ) {
+
+            if (!sesliHarflerList.contains(each)){
+                anneSessizler.add(each);
+            }
+        }
+
+        for (String each:babaHarfler
+        ) {
+
+            if (!sesliHarflerList.contains(each)){
+                babaSessizler.add(each);
+            }
+        }
+
+        for (String each:cocukHarfler
+        ) {
+
+            if (!sesliHarflerList.contains(each)){
+                cocukSessizler.add(each);
+            }
+        }
+
+        // cocugun ismindeki harfleri anne ve babanin harfleri ile karsilastirip
+        // ortak harfleri sayalim
+
+        boolean anneOrtakHarf = false;
+        boolean babaOrtakHarf = false;
+
+        String cocukHarf="";
+        boolean cocukHerHarf = true;
+        boolean cocukHarfKontrol = false;
+
+        for (int i = 0; i <cocukSessizler.size() ; i++) {
+
+            cocukHarf = cocukSessizler.get(i);
+
+            if (anneSessizler.contains(cocukHarf)){
+                anneOrtakHarf =true;
+                cocukHarfKontrol = true;
+            }
+
+            if (babaSessizler.contains(cocukHarf)){
+                babaOrtakHarf = true;
+                cocukHarfKontrol = true;
+            }
+
+            if (!cocukHarfKontrol){ // if parantezinde true veya false olmali
+                cocukHerHarf = false;       // cocukHarfKontrol zaten boolean
+                                            // cocukHarfKontrol == false yerine !cocukHarfKontrol
+            }
+
+            cocukHarfKontrol = false;
+
+        }
+
+
+        // artik anne ve baba isimleri ile ortak sessiz harf olup olmadigini biliyorum
+        // anneOrtakHarf =true  ve babaOrtakHarf = true ise anne babadan harf var demektir
+
+
+        // artik cocugun her harfinin anne babada olup olmadigini biliyorum
+        // cocukHerHarf = false ise tum harfler anne babada yok
+        // cocukHerHarf = true ise tum harfler anne babada var
+
+
+        if (anneOrtakHarf && babaOrtakHarf && cocukHerHarf){
+            System.out.println("Super aile");
+        }else{
+            System.out.println("Super aile degil");
+        }
     }
 }
