@@ -17,6 +17,7 @@ public class C03_Array {
 
         System.out.println(Arrays.toString(ortakElemanlariBul(arr1,arr2)));
 
+
     }
 
     public static String[] ortakElemanlariBul(String[] arr1, String[]arr2){
@@ -41,5 +42,8 @@ public class C03_Array {
         }
 
         return ortakArr;
+
+
+
     }
 }
